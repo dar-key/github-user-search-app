@@ -1,0 +1,276 @@
+:root {
+  --bg: #f5f5f5;
+  --bg-secondary: #ffffff;
+  --button-bg: #1a90ff;
+  --default-text: #000000;
+  --secondary-text: #797979;
+  --btn-text: white;
+  --button-hover-glow: #34d0ff49;
+  --link-text: #0ea7ff;
+  --shadow: #006eff11;
+  --section-bg: #f1f5ff;
+  --error-bg: #809dfa;
+
+  #theme-icon {
+    filter: invert(255, 255, 255);
+  }
+}
+
+:root.dark-theme {
+  --bg: #1a253a;
+  --bg-secondary: #273655;
+  --button-bg: #3682f3;
+  --default-text: #fff;
+  --secondary-text: #c2c2c2;
+  --button-hover-glow: #256ac459;
+  --link-text: #4e8ff0;
+  --shadow: #0000000e;
+  --section-bg: #202f49;
+  --error-bg: #3c5a86;
+
+  #theme-icon {
+    filter: none;
+  }
+}
+
+* {
+  font-family: "Space Mono", sans-serif;
+
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  color: var(--default-text);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.opacity-75 {
+  opacity: 0.75;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+body {
+  background-color: var(--bg);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0 auto;
+  max-width: 45rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+  align-items: center;
+  width: 100%;
+}
+
+#error-message {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: var(--error-bg);
+  border-radius: 12px;
+  padding: 1rem;
+  gap: 1.5rem;
+
+  * {
+    color: white;
+  }
+
+  > span {
+    font-weight: 800;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: #f57883;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+#title {
+  font-size: 1.75rem;
+}
+
+#theme-switch {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 1rem;
+  user-select: none;
+}
+
+#theme-switch-text {
+  font-size: 1.125rem;
+}
+
+#search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-secondary);
+  margin: 2rem 0 1.5rem 0;
+  border-radius: 8px;
+  padding: 8px;
+  width: 100%;
+  box-shadow: 0 0 50px 0 var(--shadow);
+}
+
+#search-input {
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  background: none;
+  flex-grow: 1;
+}
+
+#search-icon {
+  margin: 0 1rem;
+  user-select: none;
+}
+
+#search-input::placeholder {
+  color: var(--secondary-text);
+  height: 100%;
+}
+
+#search-input:focus {
+  outline: none;
+}
+
+#search-btn {
+  user-select: none;
+  border: none;
+  color: var(--btn-text);
+  background-color: var(--button-bg);
+  padding: clamp(0.2rem, 3vw, 0.8rem) clamp(0.2rem, 2vw, 1.6rem);
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#search-btn:hover {
+  box-shadow: 0 0 5px 5px var(--button-hover-glow);
+  scale: 1.02;
+}
+
+#search-results {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-secondary);
+  width: 100%;
+  padding: 3rem;
+  gap: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 50px 0 var(--shadow);
+}
+
+#pfp {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  align-self: start;
+  margin-left: 0.8rem;
+}
+
+#user-info {
+  width: 100%;
+}
+
+#name-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
+  #username {
+    color: var(--link-text);
+  }
+}
+
+#bio {
+  color: var(--secondary-text);
+}
+
+#name {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+#numbers {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem 0;
+  background-color: var(--section-bg);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+}
+
+#numbers .stat > span {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+#extra-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  .links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .links > div {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    width: 45%;
+  }
+}
+
+#twitter > a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    font-size: 13px;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  #search-results {
+    flex-direction: column;
+
+    #pfp {
+      margin: 0;
+      align-self: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    font-size: 11px;
+  }
+}

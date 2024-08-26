@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github User Search</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Space+Mono:regular,italic,700,700italic"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1 id="title">Github User Search</h1>
+        <div id="theme-switch">
+          <p id="theme-switch-text">Dark</p>
+          <img src="./assets/icon-moon.svg" alt="" id="theme-icon" />
+        </div>
+      </header>
+
+      <div id="search-container">
+        <img src="./assets/icon-search.svg" alt="" id="search-icon" />
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search GitHub username..."
+        />
+        <button id="search-btn">Search</button>
+      </div>
+
+      <div id="error-message" class="hidden">
+        <span>!</span>
+        <p>Please enter a valid GitHub username</p>
+      </div>
+
+      <div id="search-results" class="hidden">
+        <img src="./assets/image-user-placeholder.png" alt="" id="pfp" />
+        <div id="user-info">
+          <div id="name-container">
+            <div>
+              <p id="name">Bob</p>
+              <span id="username">@bob_bob</span>
+            </div>
+
+            <p id="joined">Joined 5 days ago</p>
+          </div>
+
+          <p id="bio">
+            I am bob. Professor in Geodesy, Seismology, and Engineering,
+            University of Houston
+          </p>
+
+          <div id="numbers">
+            <div class="stat">
+              <p>Repos</p>
+              <span id="repos">29</span>
+            </div>
+
+            <div class="stat">
+              <p>Followers</p>
+              <span id="followers">3489</span>
+            </div>
+
+            <div class="stat">
+              <p>Following</p>
+              <span id="following">35</span>
+            </div>
+          </div>
+
+          <div id="extra-info">
+            <div class="links">
+              <div id="location">
+                <img src="./assets/icon-location.svg" alt="" />
+                <p id="location-text">Ohio</p>
+              </div>
+
+              <div id="twitter">
+                <img src="./assets/icon-twitter.svg" alt="" />
+                <a target="_blank" id="twitter-text">Not Available</a>
+              </div>
+            </div>
+
+            <div class="links">
+              <div id="website">
+                <img src="./assets/icon-website.svg" alt="" />
+                <p id="website-text">blog</p>
+              </div>
+
+              <div id="company">
+                <img src="./assets/icon-company.svg" alt="" />
+                <p id="company-text">@github</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
